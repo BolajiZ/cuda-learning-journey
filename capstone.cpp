@@ -15,6 +15,9 @@ void push_back(DynArray& arr, int value) {
             newData[i] = arr.data[i];
 
         }
+        // right after the for-loop that copies:
+        std::cout << "after grow: box0=" << newData[0] 
+                  << " box1=" << newData[1] << "\n";
         delete[] arr.data;
         arr.data = newData;
         arr.capacity = newCapacity;
@@ -40,6 +43,7 @@ int main(){
         std::cout << arr.data[i] << " ";
 
     }
+
     std::cout << "\n";
 
     delete[] arr.data;
