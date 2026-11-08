@@ -31,7 +31,7 @@ int main() {
   int threadsPerBlock = 256;
   int numBlocks = (n + threadsPerBlock - 1) / threadsPerBlock;
   vectorSub<<<numBlocks, threadsPerBlock>>>(d_a, d_b, d_c, n);
-  printf("Launch status: %s\n", cudaGetErrorString(cudaGetLastError()));   
+  printf("Launch status: %s\n", cudaGetErrorString(cudaGetLastError()));
 
   cudaMemcpy(h_c, d_c, size, cudaMemcpyDeviceToHost);
 
